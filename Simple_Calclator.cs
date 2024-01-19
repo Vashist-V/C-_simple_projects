@@ -1,4 +1,4 @@
-﻿using System.Text;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Calculator
@@ -8,20 +8,20 @@ namespace Calculator
         static void Main(string[] args)
         {
 
-            int num1;
-            int num2;
+            float num1;
+            float num2;
             string answer;
 
-            int result;
+            float result;
 
             Console.WriteLine("Welcome to the calculator program");
             Console.WriteLine("Enter your first number");
 
-            num1 = Convert.ToInt32(Console.ReadLine());
+            num1 = float.Parse(Console.ReadLine());
 
             Console.WriteLine("Enter your second number");
 
-            num2 = Convert.ToInt32(Console.ReadLine());
+            num2 = float.Parse(Console.ReadLine());
 
             Console.WriteLine("What type of operation you want to perform");
 
@@ -43,7 +43,14 @@ namespace Calculator
             }
             else
             {
-                result = num1 / num2;
+                if(num2 == 0)
+                {
+                    Console.WriteLine("Cannot divide by 0!");
+                }
+                else
+                {
+                    result = num1 / num2;
+                }
             }
 
             Console.WriteLine("The result is " + result);
